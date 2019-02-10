@@ -1,8 +1,6 @@
 #include <SFML/Graphics.hpp>
 #include <iostream>
 
-
-
 sf::Image image;
 sf::Texture texture;
 sf::Sprite sprite;
@@ -10,31 +8,26 @@ float speed = 2.0;
 float CurrentFrame = 0;
 
 
-//void keyboard();
-
-
 int main()
 {
     setlocale(LC_ALL, "rus");
 
-//    sf::ContextSettings settings;                                                   //Настройки содержимого
-//    settings.antialiasingLevel = 6;                                             //Уровень сглаживания!
+//    sf::ContextSettings settings;                                                   
+//    settings.antialiasingLevel = 6;                                             
 
 
-    sf::RenderWindow window;                                                        //Создание окна (с рендером)
-    window.create(sf::VideoMode(700,600), "Game" /*,sf::Style::Default, settings*/);        //Задание параметров окна
+    sf::RenderWindow window;                                                        
+    window.create(sf::VideoMode(700,600), "Game" /*,sf::Style::Default, settings*/);        
     window.setFramerateLimit(60);
 
 
 
-//    sf::CircleShape circle;                                                         //Создание объекта круг
-//    circle.setRadius(200);                                                      //Радиус круга
-//    circle.setFillColor(sf::Color::Cyan);                                           //Задание цвета
-//    circle.setPosition(175, 20);                                                 //Установка позиции круга
-
+//    sf::CircleShape circle;                                                         
+//    circle.setRadius(200);                                                      
+//    circle.setFillColor(sf::Color::Cyan);                                           
+//    circle.setPosition(175, 20);                                                 
 //    circle.setOutlineColor(sf::Color::Blue);
 //    circle.setOutlineThickness(10);
-
 
 
 //    sf::RectangleShape square;
@@ -75,7 +68,7 @@ int main()
 
 
 
-    while(window.isOpen())                                                      //Условия закрытия окна
+    while(window.isOpen())                                                      
     {
 
         float time = clock.getElapsedTime().asMicroseconds();
@@ -85,7 +78,7 @@ int main()
         std::cout<<"CurrentFrame: "<<CurrentFrame<<std::endl;
 
 
-        sf::Event event;                                                            //Создание события
+        sf::Event event;                                                            
         while(window.pollEvent(event))
         {
             if(event.type == sf::Event::Closed)
@@ -144,16 +137,17 @@ int main()
 
 
 
-            window.clear(sf::Color::Black);             //Очистка окна и задание цвета фона
+            window.clear(sf::Color::Black);             
 
-//            window.draw(circle);                    //Отрисовка круга
+//            window.draw(circle);                    
 //            window.draw(square);
 //            window.draw(cube);
 //            window.draw(square0);
+            
             window.draw(sprite);
 
 
-            window.display();                       //Вывод на экран
+            window.display();                       
 
 
         }
@@ -165,9 +159,4 @@ int main()
 
     return 0;
 };
-
-//void keyboard()
-//{
-//
-//}
 
